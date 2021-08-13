@@ -24,6 +24,3 @@ chmod +x /etc/$usuario.sh
 gedit /etc/$usuario.sh
 
 /usr/bin/firefox https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
-
-
-rm -rf Banner/
