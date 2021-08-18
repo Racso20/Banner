@@ -8,6 +8,7 @@ git clone https://github.com/Racso20/Banner.git
 
 sudo mv Banner/racso.sh /etc/$usuario.sh
 
+# Agregar el banner al Usuario
 if [ -f /home/$usuario/.bashrc ]; then
 	echo '/etc/'$usuario'.sh' >> /home/$usuario/.bashrc
 fi
@@ -19,6 +20,20 @@ fi
 if [ -f /home/$usuario/.bash_aliases ]; then
 	echo "alias clear='printf \"\033c\" && /etc/$usuario.sh'" >> /home/$usuario/.bash_aliases
 fi
+
+# Agregar el banner al ROOT
+if [ -f /root/.bashrc ]; then
+	sudo echo '/etc/'$usuario'.sh' >> /root/.bashrc
+fi
+
+if [ -f /root/.zshrc ]; then
+	sudo echo '/etc/'$usuario'.sh' >> /root/.zshrc
+fi
+
+if [ -f /root/.bash_aliases ]; then
+	sudo echo "alias clear='printf \"\033c\" && /etc/$usuario.sh'" >> /root/.bash_aliases
+fi
+
 
 chmod +x /etc/$usuario.sh
 gedit /etc/$usuario.sh
