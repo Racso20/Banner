@@ -4,9 +4,7 @@ usuario=$(id -un)
 
 echo $usuario
 
-git clone https://github.com/Racso20/Banner.git
-
-sudo mv Banner/racso.sh /etc/$usuario.sh
+sudo mv racso.sh /etc/$usuario.sh
 
 # Agregar el banner al Usuario
 if [ -f /home/$usuario/.bashrc ]; then
