@@ -17,6 +17,8 @@ fi
 
 if [ -f /home/$usuario/.bash_aliases ]; then
 	echo "alias clear='printf \"\033c\" && /etc/$usuario.sh'" >> /home/$usuario/.bash_aliases
+else
+	echo "alias clear='printf \"\033c\" && /etc/$usuario.sh'" > /home/$usuario/.bash_aliases
 fi
 
 # Agregar el banner al ROOT
@@ -29,6 +31,8 @@ if [ -f /root/.zshrc ]; then
 fi
 
 if [ -f /root/.bash_aliases ]; then
+	sudo echo "alias clear='printf \"\033c\" && /etc/$usuario.sh'" >> /root/.bash_aliases
+else
 	sudo echo "alias clear='printf \"\033c\" && /etc/$usuario.sh'" >> /root/.bash_aliases
 fi
 
